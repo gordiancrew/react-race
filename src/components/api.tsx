@@ -1,22 +1,26 @@
 import { SetStateAction, useEffect, useState } from "react";
 
- interface IProd {
+ export interface IProd {
   id:string;
+}
+
+export interface IProds{
+  products:IProd[];
 }
 
 function MyComponent() {
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
+    const [isLoaded, setIsLoaded] = useState<any>(false);
+    const [items, setItems] = useState<Array<IProd>>([]);
   
     useEffect(() => {
       fetch("https://dummyjson.com/products?limit=10")
         .then(res => res.json())
         .then(
-          (result) => {
+          (result:IProds) => {
             setIsLoaded(true);
-             setItems(result);
-            console.log(result)
+             setItems(result.products);
+            console.log("consolelog"+result.products)
           },
         
           (error) => {
@@ -36,8 +40,8 @@ function MyComponent() {
       return (
         <ul>
           {items.map(product => (
-            <li key={product}>
-              {product} 
+            <li key={product.id}>
+              {product.id} 
             </li>
           ))}
         </ul>
