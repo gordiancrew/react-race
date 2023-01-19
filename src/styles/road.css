@@ -9,3 +9,7 @@
     height: 5px;
     border-top: dashed 3px green;
 }
+.car-img{
+    transform: scale(0.5);
+    margin-right: 80%;
+}

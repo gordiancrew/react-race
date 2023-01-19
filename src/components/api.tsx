@@ -1,4 +1,6 @@
 import {useEffect, useState } from "react";
+import Car from "./car";
+import Road from "./road";
 
 export interface ICar {
 	id: number;
@@ -42,7 +44,7 @@ function MyGarage() {
 		return (
 			<ul>
 				{items.map((car) => (
-					<li key={car.id}>{car.id}{car.name}{car.color}</li>
+					<li key={car.id}>{Road(car.color)}</li>
 				))}
 			</ul>
 

@@ -2,19 +2,19 @@
 import React from "react";
 import "../styles/road.css";
 
-function Car() {
+function Car(color:string) {
 
     return(
 <React.Fragment>
 
 
 
-<svg width="365" height="185">
+<svg className="car-img" width="365" height="185">
     {/* <!-- Top --> */}
       <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="blue" stroke-width="10" />
     
     {/* <!-- Body --> */}
-      <rect x="10" y="70" width="340" height="80" fill="blue" rx="30" />
+      <rect x="10" y="70" width="340" height="80" fill={color} rx="30" />
       
     <g>
     {/* <!-- Left line --> */}
