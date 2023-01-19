@@ -10,6 +10,23 @@
     border-top: dashed 3px green;
 }
 .car-img{
-    transform: scale(0.5);
+    transform: scale(0.3);
     margin-right: 80%;
+    margin-bottom: -70px;
+   margin-top: -40px;
+}
+.road-btns{
+    display: flex;
+
+}
+.car-name{
+    font-size: 2rem;
+    color: blue;
+
+}
+button{
+    cursor: pointer;
+}
+button:hover{
+    background-color:aqua;
 }

@@ -8,10 +8,6 @@ export interface ICar {
 	color: string;
 }
 
-// export interface ICars {
-// 	cars: ICar[];
-// }
-
 function MyGarage() {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState<any>(false);
@@ -42,11 +38,11 @@ function MyGarage() {
 	} else {
 		console.log("we are here");
 		return (
-			<ul>
+			<div>
 				{items.map((car) => (
-					<li key={car.id}>{Road(car.color)}</li>
+					<div key={car.id}><Road color={car.color} carname={car.name} /></div>
 				))}
-			</ul>
+			</div>
 
 		//  <h1>hello</h1>
 		);
