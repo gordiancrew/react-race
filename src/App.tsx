@@ -3,7 +3,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import MyGarage from './components/api';
+import MyGarage from './components/garage';
 import Header from './components/header';
 import Winners from './components/winners';
 

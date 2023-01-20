@@ -1,5 +1,6 @@
 import {useEffect, useState } from "react";
 import Car from "./car";
+import Manager from "./manager";
 import Road from "./road";
 
 export interface ICar {
@@ -39,6 +40,7 @@ function MyGarage() {
 		console.log("we are here");
 		return (
 			<div>
+				<Manager />
 				{items.map((car) => (
 					<div key={car.id}><Road color={car.color} carname={car.name} /></div>
 				))}

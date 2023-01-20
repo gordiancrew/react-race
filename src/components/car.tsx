@@ -3,13 +3,14 @@ import React from "react";
 import "../styles/road.css";
 
 function Car(props:any) {
+  const classname:string=`car-img ${props.classAdd} `
 
     return(
 <React.Fragment>
 
 
 
-<svg className="car-img" width="365" height="185">
+<svg className={classname}  width="365" height="185">
     {/* <!-- Top --> */}
       <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="blue" stroke-width="10" />
     
