@@ -12,17 +12,17 @@ function Car(props:any) {
 
 <svg className={classname}  width="365" height="185">
     {/* <!-- Top --> */}
-      <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="blue" stroke-width="10" />
+      <rect x="70" y="10" width="220" height="130" fill="transparent" rx="150" stroke="blue" strokeWidth="10" />
     
     {/* <!-- Body --> */}
       <rect x="10" y="70" width="340" height="80" fill={props.color} rx="30" />
       
     <g>
     {/* <!-- Left line --> */}
-      <line x1="145" y1="10" x2="145" y2="80" stroke="blue" stroke-width="10"/>
+      <line x1="145" y1="10" x2="145" y2="80" stroke="blue" strokeWidth="10"/>
 
     {/* <!-- Right line --> */}
-      <line x1="215" y1="10" x2="215" y2="80" stroke="blue" stroke-width="10"/>
+      <line x1="215" y1="10" x2="215" y2="80" stroke="blue" strokeWidth="10"/>
     </g>
   
     <g>
@@ -35,13 +35,13 @@ function Car(props:any) {
   
     {/* <!-- Left wheel --> */}
     <g>
-      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="90" cy="140"/>    
+      <circle r="40px" fill="#222" stroke="white" strokeWidth="7" cx="90" cy="140"/>    
       <circle r="15px" fill="#555" cx="90" cy="140"/>
     </g>
   
     {/* <!-- Right wheel --> */}
     <g>
-      <circle r="40px" fill="#222" stroke="white" stroke-width="7" cx="270" cy="140"/>
+      <circle r="40px" fill="#222" stroke="white" strokeWidth="7" cx="270" cy="140"/>
       <circle r="15px" fill="#555" cx="270" cy="140"/>
     </g>  
 

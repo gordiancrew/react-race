@@ -1,11 +1,11 @@
-.road-box{
+.road-box {
     width: 100%;
-
     background-color: aqua;
     border: 1 px solid black;
     position: relative;
 }
-.road-btn-a{
+
+.road-btn-a {
     position: absolute;
     border: 1px solid green;
     height: 20px;
@@ -14,7 +14,8 @@
     top: 40px;
     color: green;
 }
-.road-flag{
+
+.road-flag {
     position: absolute;
     bottom: 6px;
     right: 120px;
@@ -22,7 +23,8 @@
     width: 40px;
     z-index: 10;
 }
-.road-btn-b{
+
+.road-btn-b {
     position: absolute;
     border: 1px solid red;
     height: 20px;
@@ -31,35 +33,50 @@
     top: 40px;
     color: red;
 }
-.road-line{
+
+.road-line {
     width: 100%;
     height: 5px;
     border-top: dashed 3px green;
 }
-.car-img{
-    transform: scale(0.3);
-    
-    margin-bottom: -70px;
-   margin-top: -40px;
-  margin-left: -5%;
-  /* margin-left: 85vw; */
+
+.car-img {
+    transform: scale(0.2);
+    margin-bottom: -80px;
+    margin-top: -40px;
+    margin-left: -5%;
 }
-.drive{
+
+.drive {
     margin-left: 85vw;
     transition: 5s;
 }
-.road-btns{
+
+.road-btns {
     display: flex;
 
 }
-.car-name{
-   
-    color: blue;
 
+.car-name {
+    color: blue;
 }
-button{
+
+button {
     cursor: pointer;
 }
-button:hover{
-    background-color:aqua;
+
+button:hover {
+    background-color: aqua;
+}
+
+.arrow-page{
+    display:flex;
+}
+
+.arrow{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.arrow:hover{
+    color:green;
 }
