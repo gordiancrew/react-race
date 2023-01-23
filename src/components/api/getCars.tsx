@@ -12,17 +12,11 @@ function GetCars() {
 					setItems(result);
 					console.log("consolelog" + result);
 				},
-
 				(error) => {
 					console.log('error: ' + error)
 				}
 			)
 	})
-
-
 	return items;
-
-
-
 }
 export default GetCars;

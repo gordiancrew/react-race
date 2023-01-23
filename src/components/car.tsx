@@ -12,7 +12,6 @@ function Car(props: ICarColorClass) {
   return (
     <React.Fragment>
       <svg className={classname} width="365" height="185">
-        {/* <!-- Top --> */}
         <rect
           x="70"
           y="10"
@@ -24,7 +23,6 @@ function Car(props: ICarColorClass) {
           strokeWidth="10"
         />
 
-        {/* <!-- Body --> */}
         <rect
           x="10"
           y="70"
@@ -35,7 +33,7 @@ function Car(props: ICarColorClass) {
         />
 
         <g>
-          {/* <!-- Left line --> */}
+       
           <line
             x1="145"
             y1="10"
@@ -45,7 +43,6 @@ function Car(props: ICarColorClass) {
             strokeWidth="10"
           />
 
-          {/* <!-- Right line --> */}
           <line
             x1="215"
             y1="10"

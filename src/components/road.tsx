@@ -30,12 +30,13 @@ function Road(props: ICarObject) {
           <div className="car-name">{props.carname}</div>
         </div>
         <button
-          onClick={() => setDriven((x: boolean) => !x)}
+          onClick={() => setDriven((x: boolean) => true)}
           className="road-btn-a"
         >
           A
         </button>
-        <button className="road-btn-b">B</button>
+        <button onClick={() => setDriven((x: boolean) => false)}
+         className="road-btn-b">B</button>
         <img
           src="https://www.svgrepo.com/show/48420/racing-flag.svg"
           className="road-flag"

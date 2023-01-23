@@ -20,8 +20,8 @@ function MyGarage() {
 	const [updateName, setUpdateName] = useState<string>('');
 	const [countAction, setCountAction] = useState<number>(0);
 	const [idUpd, setIdUpd] = useState<number>(0);
-	const [carsNumber, setCarsNumber]=useState<number>(0);
-	if(!localStorage.page)localStorage.page=1;
+	const [carsNumber, setCarsNumber] = useState<number>(0);
+	if (!localStorage.page) localStorage.page = 1;
 
 	function addId(id: number, name: string, color: string) {
 		setIdUpd(id);
@@ -29,23 +29,40 @@ function MyGarage() {
 		setUpdateColor(color)
 	}
 
-function leftPage(){
+	function leftPage() {
 
-	if(localStorage.page>1){
-		localStorage.page=localStorage.page-1;
-		setCountAction((x)=>x+1);
+		if (localStorage.page > 1) {
+			localStorage.page = localStorage.page - 1;
+			setCountAction((x) => x + 1);
+		}
 	}
-}
-function rightPage(){
+	function rightPage() {
 
-	if(localStorage.page<(Math.ceil(carsNumber/7))){
-		let num:number=localStorage.page;
-		localStorage.page= Number(num) + 1;
-		setCountAction((x)=>x+1);
+		if (localStorage.page < (Math.ceil(carsNumber / 7))) {
+			let num: number = localStorage.page;
+			localStorage.page = Number(num) + 1;
+			setCountAction((x) => x + 1);
+		}
 	}
-	
-}
 
+	function generateCar() {
+		function randName() {
+			let result       = '';
+			const words        = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+			const max_position = words.length - 1;
+				for( let i = 0; i < 5; ++i ) {
+					let position = Math.floor ( Math.random() * max_position );
+					result = result + words.substring(position, position + 1);
+				}
+			return result;
+		}
+		function randColor(){
+			return '#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+		}
+		for (let i = 0; i < 100; i++) {
+			CreateCar(randColor(),randName());
+		}
+	}
 
 	useEffect(() => {
 		fetch("http://localhost:3000/garage")
@@ -100,11 +117,13 @@ function rightPage(){
 					<div className="manager-item">
 						<button className="manager-button">RACE</button>
 						<button className="manager-button">RESET</button>
-						<button className="manager-button">GENERATE CAR</button>
+						<button
+							onClick={() => { generateCar(); setCountAction((x) => x + 1) }}
+							className="manager-button">GENERATE CAR</button>
 					</div>
 				</div>
 				<h1>GARAGE( {carsNumber} )</h1>
-				<h2>Page #{localStorage.page} /from({Math.ceil(carsNumber/7)})</h2>
+				<h2>Page #{localStorage.page} /from({Math.ceil(carsNumber / 7)})</h2>
 				<div className="arrow-page">
 					<div onClick={leftPage} className="arrow">🡄</div>
 					<div onClick={rightPage} className="arrow">🡆</div>
@@ -112,7 +131,7 @@ function rightPage(){
 				<div>
 					{items.map((car) => (
 						<div key={car.id}><Road id={car.id} color={car.color}
-						setaction={setCountAction} carname={car.name} setid={addId} /></div>
+							setaction={setCountAction} carname={car.name} setid={addId} /></div>
 					))}
 				</div>
 			</div>
